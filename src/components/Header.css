@@ -1,0 +1,217 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   background: rgb(21, 21, 21);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+/* When scrolled - floating center style */
+.header.scrolled {
+  justify-content: center;
+  background: rgba(211, 209, 209, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 8px 20px;
+  width: fit-content;
+  left: 50%;
+  transform:  translateX(-50%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+  transition: height 0.3s ease;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 25px; /* Slightly reduced gap */
+}
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+.nav a::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 30px;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.4) 0%, rgba(0,255,255,0.1) 60%, transparent 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+.nav a:hover::before,
+.nav a.active::before {
+  opacity: 1;
+}
+.nav a:hover,
+.nav a.active {
+  color: rgba(89, 250, 153, 0.5);
+}
+
+/* Actions on the right */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced gap between right-end items */
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Resume desktop */
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgb(134, 173, 229);
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* Mobile */
+.hamburger {
+  display: none;
+}
+
+.hamburger svg {
+  color: white; /* Always white icons */
+}
+
+.resume-mobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .nav {
+    position: fixed;
+    right: -100%;
+    top: 100px ;
+    height: 200px;
+    width: 200px;
+    background: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.3s ease;
+  }
+
+  .nav.show {
+    right: 0;
+  }
+  .header.scrolled {
+    display: none;
+  }
+.theme-toggle{
+    padding-right: 300px;
+    padding-left: 200px;
+}
+  /* Add resume button inside mobile nav */
+  .nav .resume-mobile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: teal;
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+  }
+
+  /* Actions layout for mobile */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+
+  /* Hide desktop resume */
+  .resume-btn {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .nav {
+   
+    right: -100%;
+    top: 30px;
+    width: 100%;
+    height: 60vh;
+    background: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+  }
+
+  .nav.show {
+    right: 0;
+  }
+
+  .header.scrolled {
+    display: none;
+  }
+
+  .theme-toggle {
+    padding: 0 60px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav .resume-mobile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: teal;
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .resume-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

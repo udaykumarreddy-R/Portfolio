@@ -1,0 +1,144 @@
+.review-section {
+  background: #0d0d0d;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.review-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.review-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.review-header h2 span {
+  color: #b97cff;
+}
+
+.review-header p {
+  color: #ccc;
+  font-size: 18px;
+  max-width: 700px;
+  margin: 10px auto 0;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+
+.review-card.highlight > * {
+  background: #111;
+  border-radius: 10px;
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.review-header-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.review-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-header-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.review-header-card p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+blockquote {
+  margin: 15px 0;
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars {
+  color: gold;
+}
+
+.verified {
+  color: #0f0;
+  font-size: 14px;
+}
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.review-card {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, blue, green) 1;
+  border-radius: 12px;
+  padding: 20px;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.review-card:hover {
+  background: linear-gradient(to right, rgba(0, 128, 255, 0.2), rgba(0, 255, 128, 0.2));
+  transform: translateY(-5px);
+}
+
+.role {
+  color: gray;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+ .role:hover {
+  color: linear-gradient(45deg, pink, violet);
+
+}
+
+.stars {
+  color: gold;
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
