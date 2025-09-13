@@ -1,199 +1,117 @@
 import React from "react";
 import "./Projects.css";
 
-const Project = () => {
+// Import images from your folder
+import project1 from "../Assets/1l.png";
+import project2 from "../Assets/2l.png";
+import project3 from "../Assets/3l.png";
+import project4 from "../Assets/4l.png";
+import project5 from "../Assets/5l.png";
+import project6 from "../Assets/6l.png";
+
+const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      title: "Food Delivery App",
+      img: project1,
+      description:
+        "Our Food Delivery App is a simple and reliable platform that brings freshly prepared meals straight to users’ doorsteps. It offers a smooth ordering experience with features like menu browsing, search, filters, and cart management. Users can explore different dishes, view detailed descriptions, and place orders with ease. With its clean design and user-friendly interface, the app makes food delivery convenient and accessible anytime, anywhere",
+      popup: "Food",
+      github: "https://github.com/udaykumarreddy-R/Food-Delivery-App",
+      deployed: "https://food-delivery-app-mu-eight.vercel.app/",
+    },
+    {
+      id: 2,
+      title: "Purohit Hub App",
+      img: project2,
+      description:
+        "Purohit Hub is a one-stop platform that connects people with experienced priests for all kinds of religious rituals and ceremonies. Along with booking purohits, the app also provides catering and cooking facilities to make traditional events more convenient and complete. Users can easily check priest details, availability, and services while arranging food and rituals in one place. With its simple interface and reliable features, Purohit Hub ensures hassle-free spiritual and cultural celebrations anytime, anywhere.",
+      popup: "Purohit Hub",
+      github: "https://github.com/udaykumarreddy-R/Purohit-Hub",
+      deployed: "https://purohit-hub.vercel.app/",
+    },
+    {
+      id: 3,
+      title: "E- Commerce App",
+      img: project3,
+      description:
+        "Our E-Commerce App is a complete online shopping platform that offers a wide range of products across different categories. It provides a smooth and secure shopping experience with features like product search, filters, and cart management. Users can explore the latest collections and get detailed product information. With its clean design and reliable performance, the app makes online shopping simple, convenient, and accessible anytime, anywhere",
+      popup: "E-commerce",
+      github: "https://github.com/udaykumarreddy-R/E-commerce-website",
+      deployed: "https://e-commerce-website-red-rho.vercel.app/",
+    },
+    {
+      id: 4,
+      title: "Weather App",
+      img: project4,
+      description:
+        "Our Weather App provides real-time forecasts with accurate temperature, humidity, and climate updates based on your location. With a simple and user-friendly interface, it helps you stay prepared for daily and weekly weather changes. Whether it’s sunny, rainy, or cloudy, the app keeps you informed at all times. Plan your day with confidence using reliable and up-to-date weather insights.",
+      popup: "Weather",
+      github: "https://github.com/udaykumarreddy-R/weather1",
+      deployed: "https://weather-swart-three-88.vercel.app/",
+    },
+    {
+      id: 5,
+      title: "Student Management App",
+      img: project5,
+      description:
+        "The Student Management App simplifies the process of organizing and monitoring student information. From maintaining personal details to tracking attendance and academic performance, everything can be managed in one place. It helps teachers, students, and administrators stay connected and informed. With its intuitive interface, the app ensures smooth and efficient academic management for institutions of any size.",
+      popup: "CRM-College",
+      github: "https://github.com/udaykumarreddy-R/CRM-College",
+      deployed: "https://crm-college-demo.vercel.app",
+    },
+    {
+      id: 6,
+      title: "Hospital App",
+      img: project6,
+      description:
+        "The Hospital Management App is designed to streamline hospital operations and improve patient care. It helps manage patient records, doctor appointments, staff details, and medical reports in one unified platform. Administrators can track hospital activities efficiently, while patients benefit from easy access to healthcare services. With its simple interface and reliable features, the app ensures smooth and organized hospital management anytime, anywhere",
+      popup: "Hospital",
+      github: "https://github.com/udaykumarreddy-R/Hospital-Management",
+      deployed: "https://hospital-demo.vercel.app",
+    },
+  ];
+
   return (
-    <section className="work-section">
-      <h2>Latest Works</h2>
+    <div className="projects-container">
+      <div className="title-box">Latest Works</div>
+      <div className="connector"></div>
 
-      {/* Project 1 */}
-      <div className="project project1">
-        <div className="project-img">
-          <div className="project-img-wrapper">
-            <a href="https://www.hacicurus.com/" target="_blank" rel="noreferrer">
-              <img src="images/harigurus.webp" alt="Harigurus Project" draggable="false" />
-            </a>
+      <div className="vertical-line">
+        {projects.map((project, i) => (
+          <div key={project.id} className="dot-container">
+            <div className="dot"></div>
+            <div className={`h-line ${i % 2 === 0 ? "left" : "right"}`}>
+              <div className="line"></div>
+              <div className="project-card1">
+                <div className="project-card">
+                  <div className="img-wrapper">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      onClick={() => window.open(project.deployed, "_blank")}
+                    />
+                    {/* Popup on hover */}
+                    <div
+                      className="popup"
+                      onClick={() => window.open(project.github, "_blank")}
+                    >
+                      {project.popup}
+                    </div>
+                  </div>
+                  <h3>{project.title}</h3>
+                </div>
+                <div className="project-description">
+                  <p>{project.description}</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="project-details">
-          <h3>Harigurus</h3>
-          <span>(Event Booking)</span>
-          <p>
-            HariGurus is a one-stop-shop for all Hindu religious, customs and
-            traditional requirements. Built the complete site from scratch.
-          </p>
-          <ul>
-            <li>#react.js</li>
-            <li>#express.js</li>
-            <li>#node.js</li>
-            <li>#swiper.js</li>
-            <li>#mongodb</li>
-            <li>#mongoose</li>
-            <li>#css</li>
-            <li>#javascript</li>
-            <li>#figma</li>
-          </ul>
-          <a className="circle-dot" href="https://www.hacicurus.com/" target="_blank" rel="noreferrer"></a>
-          <div className="circle-extension"></div>
-        </div>
+        ))}
       </div>
-
-      {/* Project 2 */}
-      <div className="project project2">
-        <div className="project-img">
-          <div className="project-img-wrapper">
-            <a href="https://eazygrad.com" target="_blank" rel="noreferrer">
-              <img src="images/eazygrad.webp" alt="EazyGrad Project" draggable="false" />
-            </a>
-          </div>
-        </div>
-
-        <div className="project-details">
-          <h3>EazyGrad</h3>
-          <span>(EdTech Startup)</span>
-          <p>
-            Being a lead developer, revamped the site to a highly responsive one
-            with new features and pages. Worked as a team with product manager
-            and UX designer.
-          </p>
-          <ul>
-            <li>#node.js</li>
-            <li>#express.js</li>
-            <li>#mongoDB</li>
-            <li>#mongoDBAtlas</li>
-            <li>#ejs</li>
-            <li>#swiper.js</li>
-            <li>#html</li>
-            <li>#css</li>
-            <li>#javascript</li>
-            <li>#lighthouse</li>
-            <li>#figma</li>
-          </ul>
-          <a className="circle-dot" href="https://eazygrad.com" target="_blank" rel="noreferrer"></a>
-          <div className="circle-extension"></div>
-        </div>
-      </div>
-
-      {/* Project 3 */}
-      <div className="project project3">
-        <div className="project-img">
-          <div className="project-img-wrapper">
-            <a href="https://money-arjan.netlify.app/" target="_blank" rel="noreferrer">
-              <img src="images/money-arjan.webp" alt="Money Arjan Project" draggable="false" />
-            </a>
-          </div>
-        </div>
-
-        <div className="project-details">
-          <h3>Money Arjan Solutions</h3>
-          <span>(Software Development Agency)</span>
-          <p>
-            Designed and developed the site from scratch. Integrated contact form in the website using Netlify.
-          </p>
-          <ul>
-            <li>#html</li>
-            <li>#css</li>
-            <li>#bootstrap</li>
-            <li>#netlify</li>
-            <li>#figma</li>
-          </ul>
-          <a className="circle-dot" href="https://money-arjan.netlify.app/" target="_blank" rel="noreferrer"></a>
-          <div className="circle-extension"></div>
-        </div>
-      </div>
-
-      {/* Project 4 */}
-      <div className="project project4">
-        <div className="project-img">
-          <div className="project-img-wrapper">
-            <a href="https://webdevenglish.com/" target="_blank" rel="noreferrer">
-              <img src="images/web-dev-english.webp" alt="Web Dev English Project" draggable="false" />
-            </a>
-          </div>
-        </div>
-
-        <div className="project-details">
-          <h3>Web Dev English</h3>
-          <span>(Coaching and Consulting)</span>
-          <p>
-            US-based English Coach's website for guiding techies. Improved existing look and added new sections.
-          </p>
-          <ul>
-            <li>#wordpress</li>
-            <li>#elementor</li>
-            <li>#html</li>
-            <li>#css</li>
-            <li>#javascript</li>
-            <li>#figma</li>
-          </ul>
-          <a className="circle-dot" href="https://webdevenglish.com/" target="_blank" rel="noreferrer"></a>
-          <div className="circle-extension"></div>
-        </div>
-      </div>
-
-      {/* Project 5 */}
-      <div className="project project5">
-        <div className="project-img">
-          <div className="project-img-wrapper">
-            <a href="https://digi-drive.netlify.app/" target="_blank" rel="noreferrer">
-              <img src="images/pioneer-digital.webp" alt="Pioneer Digital Project" draggable="false" />
-            </a>
-          </div>
-        </div>
-
-        <div className="project-details">
-          <h3>Pioneer Digital</h3>
-          <span>(Digital Marketing Agency)</span>
-          <p>
-            Featured site while working with TheBrandwick.com (agency). Worked as a frontend developer to make the site interactive and responsive.
-          </p>
-          <ul>
-            <li>#javascript</li>
-            <li>#bootstrap</li>
-            <li>#sass</li>
-            <li>#html</li>
-            <li>#figma</li>
-          </ul>
-          <a className="circle-dot" href="https://digi-drive.netlify.app/" target="_blank" rel="noreferrer"></a>
-          <div className="circle-extension"></div>
-        </div>
-      </div>
-
-      {/* Project 6 */}
-      <div className="project project6">
-        <div className="project-img">
-          <div className="project-img-wrapper">
-            <a href="https://currency-converter-by-anurag.netlify.app/" target="_blank" rel="noreferrer">
-              <img src="images/currency-converter.webp" alt="Currency Converter Project" draggable="false" />
-            </a>
-          </div>
-        </div>
-
-        <div className="project-details">
-          <h3>Currency Converter</h3>
-          <span>(Productivity Tool)</span>
-          <p>
-            I made this app when I started learning React. This app uses an external API for currency rates with a clean and simple UI.
-          </p>
-          <ul>
-            <li>#react.js</li>
-            <li>#javascript</li>
-            <li>#jsx</li>
-            <li>#css</li>
-            <li>#ajax</li>
-            <li>#fetchAPI</li>
-            <li>#figma</li>
-          </ul>
-          <a className="circle-dot" href="https://currency-converter-by-anurag.netlify.app/" target="_blank" rel="noreferrer"></a>
-          <div className="circle-extension"></div>
-        </div>
-      </div>
-
-      {/* Vertical Line */}
-      <div className="vertical-line"></div>
-    </section>
+    </div>
   );
 };
 
-export default Project;
+export default Projects;

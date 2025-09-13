@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Home from "./components/Home"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
@@ -14,7 +15,7 @@ function App() {
 
       {/* Sections */}
       <section id="home" style={{ height: "100vh", background: "#111", color: "white" }}>
-        <h1>Home Section</h1>
+        <Home />
       </section>
 
       <section id="about" style={{ background: "#222", color: "white" }}>

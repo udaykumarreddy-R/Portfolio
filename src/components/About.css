@@ -3,6 +3,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* Tabs */
 .tabs {
   display: flex;
   gap: 10px;
@@ -22,6 +23,7 @@
   color: white;
 }
 
+/* About section */
 .about-me-section {
   display: flex;
   gap: 40px;
@@ -31,7 +33,6 @@
 .about-image img {
   width: 300px;
   border-radius: 5px;
-  background: #ff4f81;
 }
 
 .about-text h2 {
@@ -43,30 +44,12 @@
 
 .about-text p {
   font-size: 16px;
-  color: #d3caca;
+  color: #f5e1e1;
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
-.timeline {
-  margin-top: 20px;
-}
-
-.timeline-item {
-  margin-bottom: 15px;
-}
-
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.cert-card {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 6px;
-}
+/* Education & Experience */
 .edu-exp-section {
   display: flex;
   gap: 50px;
@@ -111,26 +94,84 @@
   font-weight: bold;
 }
 
-.timeline-item p {
-  margin: 8px 0;
-  line-height: 1.5;
-}
-
 .timeline-item strong {
   display: block;
   margin-top: 5px;
   color: #b97cff;
 }
+.certificates {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 per row */
   gap: 20px;
+  margin-top: 20px;
 }
 
 .cert-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: white;
+  border: 4px solid transparent;
+  border-radius: 10px;
   padding: 15px;
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  background-image: linear-gradient(white, white),
+    linear-gradient(45deg, blue, rgb(241, 67, 67));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.cert-card:hover {
+  /* Gradient background on hover */
+  background-image: linear-gradient(
+      135deg,
+      yellow,
+      blue,
+      red
+  );
+  color: white; /* Text turns white on hover */
+  transform: translateY(-5px); /* Small lift effect */
+}
+
+.cert-card h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #003366;
+  transition: color 0.3s ease-in-out;
+}
+
+.cert-card:hover h4 {
+  color: white; /* Heading turns white */
+}
+
+.cert-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cert-card:hover .cert-img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.cert-link {
+  margin-top: 10px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+.cert-card:hover .cert-link {
+  color: white; /* Link turns white */
 }

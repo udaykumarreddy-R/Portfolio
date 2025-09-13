@@ -13,7 +13,7 @@
 /* When scrolled - floating center style */
 .header.scrolled {
   justify-content: center;
-  background: rgba(211, 209, 209, 0.8);
+  background: rgba(83, 76, 76, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 50px;
   padding: 8px 20px;
@@ -64,7 +64,7 @@
 }
 .nav a:hover,
 .nav a.active {
-  color: rgba(89, 250, 153, 0.5);
+  color: rgba(216, 51, 216, 0.5);
 }
 
 /* Actions on the right */
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgb(134, 173, 229);
+  background: rgb(117, 206, 136);
   padding: 5px 10px;
   border-radius: 20px;
   text-decoration: none;

@@ -3,6 +3,7 @@ import { FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
 import { HiOutlineDocumentArrowDown } from "react-icons/hi2"; // New download icon
 import logo from "../Assets/ChatGPT Image Aug 12, 2025, 07_08_24 AM.png"; // your R logo
 import "../components/Header.css";
+import resumePDF from "../Assets/uday_fullstackdeveloper.pdf (2).pdf";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,11 +49,11 @@ export default function Header() {
         <button className="theme-toggle" onClick={toggleTheme}>
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
-
-        {/* Resume button */}
-        <a href="/resume.pdf" download className="resume-btn">
+ <a href={resumePDF} download="Uday_FullStack_Developer.pdf" className="resume-btn">
           <HiOutlineDocumentArrowDown /> Resume
         </a>
+        {/* Resume button */}
+       
 
         {/* Mobile menu toggle */}
         <div className="hamburger" onClick={toggleMenu}>

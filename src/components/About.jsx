@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "./About.css";
-import profileImage from "../Assets/ChatGPT Image Jul 20, 2025, 09_47_57 PM.png"; // Replace with your image path
-import pythonCert from "../Assets/CS50P.pdf";
-import fullstackCert from "../Assets/1-d5dfa252-9d20-4708-90f0-94a36d82afab.pdf";
-import javascript from "../Assets/Javascript.pdf"
+import profileImage from "../Assets/23.png"; // Replace with your image path
+import pythonCert from"../Assets/1.jpg";
+import fullstackCert from "../Assets/2.jpg";
+import javascript from "../Assets/3.jpg";
+import reactjs from "../Assets/4.jpg"
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("about");
 
 const certificates = [
-  { title: "Python Developer Certificate", file: pythonCert },
-  { title: "Full Stack Development Certificate", file: fullstackCert },
-  { title: "React.js & Django Certificate", file: javascript },
-  { title: "Database Management Certificate", url: "https://www.credly.com/go/SVacXw8I" }
-];
+    { title: "Python Developer Certificate", image: pythonCert },
+    { title: "Full Stack Development Certificate", image: fullstackCert },
+    { title: "Java Script Certificate", image: javascript },
+    { title: "React JS Certificate", image: reactjs },
+  ];
 
 
   return (
@@ -120,33 +121,32 @@ const certificates = [
           </div>
         </div>
       )}
-
-      {/* Certificates */}
-     {activeTab === "certificates" && (
-  <div className="certificates">
-    <h2>Certificates</h2>
-    <div className="cert-grid">
-      {certificates.map((cert, index) => (
-        <div key={index} className="cert-card">
-          <h4>{cert.title}</h4>
-          {cert.file ? (
-            // Show PDF
-            <embed src={cert.file} type="application/pdf" width="100%" height="300px" />
-          ) : cert.url ? (
-            // Show URL
-            <a href={cert.url} target="_blank" rel="noopener noreferrer">
-              <p style={{ marginTop: "10px", color: "blue", textDecoration: "underline" }}>
-                View Certificate
-              </p>
-            </a>
-          ) : (
-            <p>No certificate available</p>
-          )}
+{/* Certificates */}
+      {activeTab === "certificates" && (
+        <div className="certificates">
+          <h2>Certificates</h2>
+          <div className="cert-grid">
+            {certificates.map((cert, index) => (
+              <div key={index} className="cert-card">
+                <h4>{cert.title}</h4>
+                {cert.image ? (
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="cert-img"
+                  />
+                ) : cert.url ? (
+                  <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                    <p className="cert-link">View Certificate</p>
+                  </a>
+                ) : (
+                  <p>No certificate available</p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-)}
+      )}
 
 
     </div>
